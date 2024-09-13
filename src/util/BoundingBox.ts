@@ -1,4 +1,4 @@
-import { MosaicDirection } from '../types';
+import { MosaicDirection } from '../types/types';
 import { assertNever } from './assertNever';
 
 // Each of these values is like the CSS property of the same name in percentages

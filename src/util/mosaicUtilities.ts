@@ -1,6 +1,6 @@
 import clone from 'lodash/clone';
 import get from 'lodash/get';
-import { MosaicBranch, MosaicDirection, MosaicKey, MosaicNode, MosaicParent, MosaicPath } from '../types';
+import { MosaicBranch, MosaicDirection, MosaicKey, MosaicNode, MosaicParent, MosaicPath } from '../types/types';
 
 function alternateDirection<T extends MosaicKey>(
   node: MosaicNode<T>,

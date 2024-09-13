@@ -2,9 +2,9 @@ import classNames from 'classnames';
 import noop from 'lodash/noop';
 import React from 'react';
 
-import { MosaicContext } from './contextTypes';
-import { CreateNode, MosaicKey } from './types';
-import { OptionalBlueprint } from './util/OptionalBlueprint';
+import { MosaicContext } from '../types/contextTypes';
+import { CreateNode, MosaicKey } from '../types/types';
+import { OptionalBlueprint } from '../util/OptionalBlueprint';
 
 export interface MosaicZeroStateProps<T extends MosaicKey> {
   createNode?: CreateNode<T>;

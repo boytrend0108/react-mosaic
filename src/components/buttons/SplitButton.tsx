@@ -2,8 +2,8 @@ import classNames from 'classnames';
 import noop from 'lodash/noop';
 import React from 'react';
 
-import { MosaicWindowContext } from '../contextTypes';
-import { OptionalBlueprint } from '../util/OptionalBlueprint';
+import { MosaicWindowContext } from '../../types/contextTypes';
+import { OptionalBlueprint } from '../../util/OptionalBlueprint';
 import { DefaultToolbarButton, MosaicButtonProps } from './MosaicButton';
 
 export class SplitButton extends React.PureComponent<MosaicButtonProps> {

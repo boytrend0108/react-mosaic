@@ -5,7 +5,7 @@ import isEqual from 'lodash/isEqual';
 import last from 'lodash/last';
 import set from 'lodash/set';
 import take from 'lodash/take';
-import { MosaicDropTargetPosition } from '../internalTypes';
+import { MosaicDropTargetPosition } from '../types/internalTypes';
 import {
   MosaicBranch,
   MosaicDirection,
@@ -15,7 +15,7 @@ import {
   MosaicPath,
   MosaicUpdate,
   MosaicUpdateSpec,
-} from '../types';
+} from '../types/types';
 import { getAndAssertNodeAtPathExists, getOtherBranch } from './mosaicUtilities';
 
 // https://github.com/Microsoft/TypeScript/issues/9944

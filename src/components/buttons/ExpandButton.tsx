@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
 
-import { MosaicContext, MosaicRootActions, MosaicWindowContext } from '../contextTypes';
-import { OptionalBlueprint } from '../util/OptionalBlueprint';
+import { MosaicContext, MosaicRootActions, MosaicWindowContext } from '../../types/contextTypes';
+import { OptionalBlueprint } from '../../util/OptionalBlueprint';
 import { DefaultToolbarButton, MosaicButtonProps } from './MosaicButton';
 
 export class ExpandButton extends React.PureComponent<MosaicButtonProps> {

@@ -1,10 +1,10 @@
 import flatten from 'lodash/flatten';
 import React from 'react';
-import { MosaicContext } from './contextTypes';
+import { MosaicContext } from '../types/contextTypes';
 import { Split } from './Split';
-import { MosaicBranch, MosaicDirection, MosaicKey, MosaicNode, ResizeOptions, TileRenderer } from './types';
-import { BoundingBox } from './util/BoundingBox';
-import { isParent } from './util/mosaicUtilities';
+import { MosaicBranch, MosaicDirection, MosaicKey, MosaicNode, ResizeOptions, TileRenderer } from '../types/types';
+import { BoundingBox } from '../util/BoundingBox';
+import { isParent } from '../util/mosaicUtilities';
 
 export interface MosaicRootProps<T extends MosaicKey> {
   root: MosaicNode<T>;

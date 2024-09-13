@@ -3,9 +3,9 @@ import values from 'lodash/values';
 import React from 'react';
 import { useDrop } from 'react-dnd';
 
-import { MosaicDropTargetPosition } from './internalTypes';
+import { MosaicDropTargetPosition } from '../types/internalTypes';
 import { MosaicDropTarget } from './MosaicDropTarget';
-import { MosaicDragType } from './types';
+import { MosaicDragType } from '../types/types';
 
 export const RootDropTargets = React.memo(() => {
   const [{ isDragging }] = useDrop({

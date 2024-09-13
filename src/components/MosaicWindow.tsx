@@ -16,13 +16,13 @@ import {
 
 import { DEFAULT_CONTROLS_WITHOUT_CREATION, DEFAULT_CONTROLS_WITH_CREATION } from './buttons/defaultToolbarControls';
 import { Separator } from './buttons/Separator';
-import { MosaicContext, MosaicWindowContext } from './contextTypes';
-import { MosaicDragItem, MosaicDropData, MosaicDropTargetPosition } from './internalTypes';
+import { MosaicContext, MosaicWindowContext } from '../types/contextTypes';
+import { MosaicDragItem, MosaicDropData, MosaicDropTargetPosition } from '../types/internalTypes';
 import { MosaicDropTarget } from './MosaicDropTarget';
-import { CreateNode, MosaicBranch, MosaicDirection, MosaicDragType, MosaicKey } from './types';
-import { createDragToUpdates } from './util/mosaicUpdates';
-import { getAndAssertNodeAtPathExists } from './util/mosaicUtilities';
-import { OptionalBlueprint } from './util/OptionalBlueprint';
+import { CreateNode, MosaicBranch, MosaicDirection, MosaicDragType, MosaicKey } from '../types/types';
+import { createDragToUpdates } from '../util/mosaicUpdates';
+import { getAndAssertNodeAtPathExists } from '../util/mosaicUtilities';
+import { OptionalBlueprint } from '../util/OptionalBlueprint';
 
 export interface MosaicWindowProps<T extends MosaicKey> {
   title: string;

@@ -19,20 +19,20 @@ import {
   MosaicWindow,
   MosaicZeroState,
   updateTree,
-} from '../src';
+} from '.';
 
-import { CloseAdditionalControlsButton } from './CloseAdditionalControlsButton';
+import { CloseAdditionalControlsButton } from './components/CloseAdditionalControlsButton';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
-import '../styles/index.less';
-import './carbon.less';
-import './example.less';
+import './index.less';
+import './styles/carbon.less';
+import './styles/example.less';
 
 // tslint:disable no-console
 
 // tslint:disable-next-line no-var-requires
-const gitHubLogo = require('./GitHub-Mark-Light-32px.png');
+const gitHubLogo = require('./assets/GitHub-Mark-Light-32px.png');
 // tslint:disable-next-line no-var-requires
 const { version } = require('../package.json');
 
@@ -45,8 +45,6 @@ export const THEMES = {
 export type Theme = keyof typeof THEMES;
 
 const additionalControls = React.Children.toArray([<CloseAdditionalControlsButton />]);
-
-const EMPTY_ARRAY: any[] = [];
 
 export interface ExampleAppState {
   currentNode: MosaicNode<number> | null;
@@ -212,17 +210,15 @@ const ExampleWindow = ({ count, path, totalWindowCount }: ExampleWindowProps) =>
 
   return (
     <MosaicWindow<number>
-      additionalControls={count === 3 ? additionalControls : EMPTY_ARRAY}
+      additionalControls={additionalControls}
       title={`Window ${count}`}
       createNode={() => totalWindowCount + 1}
       path={path}
       onDragStart={() => console.log('MosaicWindow.onDragStart')}
       onDragEnd={(type) => console.log('MosaicWindow.onDragEnd', type)}
-      renderToolbar={count === 2 ? () => <div className="toolbar-example">Custom Toolbar</div> : null}
     >
       <div className="example-window">
         <h1>{`Window ${count}`}</h1>
-        {count === 3 && <div className="ad-container" ref={adContainer} />}
       </div>
     </MosaicWindow>
   );

@@ -9,13 +9,13 @@ import { DndProvider } from 'react-dnd';
 import { MultiBackend } from 'react-dnd-multi-backend';
 import { v4 as uuid } from 'uuid';
 
-import { MosaicContext, MosaicRootActions } from './contextTypes';
+import { MosaicContext, MosaicRootActions } from '../types/contextTypes';
 import { MosaicRoot } from './MosaicRoot';
 import { MosaicZeroState } from './MosaicZeroState';
 import { RootDropTargets } from './RootDropTargets';
-import { MosaicKey, MosaicNode, MosaicPath, MosaicUpdate, ResizeOptions, TileRenderer } from './types';
-import { createExpandUpdate, createHideUpdate, createRemoveUpdate, updateTree } from './util/mosaicUpdates';
-import { getLeaves } from './util/mosaicUtilities';
+import { MosaicKey, MosaicNode, MosaicPath, MosaicUpdate, ResizeOptions, TileRenderer } from '../types/types';
+import { createExpandUpdate, createHideUpdate, createRemoveUpdate, updateTree } from '../util/mosaicUpdates';
+import { getLeaves } from '../util/mosaicUtilities';
 
 const DEFAULT_EXPAND_PERCENTAGE = 70;
 

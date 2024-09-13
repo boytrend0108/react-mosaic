@@ -1,26 +1,11 @@
-/**
- * @license
- * Copyright 2019 Kevin Verdieck, originally developed at Palantir Technologies, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 export {
   Mosaic,
   MosaicProps,
   MosaicUncontrolledProps,
   MosaicControlledProps,
   MosaicWithoutDragDropContext,
-} from './Mosaic';
+} from './components/Mosaic';
 export {
   MosaicNode,
   MosaicDragType,
@@ -32,8 +17,8 @@ export {
   MosaicUpdate,
   MosaicUpdateSpec,
   TileRenderer,
-} from './types';
-export { MosaicContext, MosaicRootActions, MosaicWindowActions, MosaicWindowContext } from './contextTypes';
+} from './types/types';
+export { MosaicContext, MosaicRootActions, MosaicWindowActions, MosaicWindowContext } from './types/contextTypes';
 export {
   buildSpecFromUpdate,
   createDragToUpdates,
@@ -53,12 +38,12 @@ export {
   getPathToCorner,
   isParent,
 } from './util/mosaicUtilities';
-export { MosaicWindow, MosaicWindowProps } from './MosaicWindow';
-export { createDefaultToolbarButton, DefaultToolbarButton, MosaicButtonProps } from './buttons/MosaicButton';
-export { MosaicZeroState, MosaicZeroStateProps } from './MosaicZeroState';
-export { Separator } from './buttons/Separator';
-export { ExpandButton } from './buttons/ExpandButton';
-export { ReplaceButton } from './buttons/ReplaceButton';
-export { SplitButton } from './buttons/SplitButton';
-export { RemoveButton } from './buttons/RemoveButton';
-export { DEFAULT_CONTROLS_WITH_CREATION, DEFAULT_CONTROLS_WITHOUT_CREATION } from './buttons/defaultToolbarControls';
+export { MosaicWindow, MosaicWindowProps } from './components/MosaicWindow';
+export { createDefaultToolbarButton, DefaultToolbarButton, MosaicButtonProps } from './components/buttons/MosaicButton';
+export { MosaicZeroState, MosaicZeroStateProps } from './components/MosaicZeroState';
+export { Separator } from './components/buttons/Separator';
+export { ExpandButton } from './components/buttons/ExpandButton';
+export { ReplaceButton } from './components/buttons/ReplaceButton';
+export { SplitButton } from './components/buttons/SplitButton';
+export { RemoveButton } from './components/buttons/RemoveButton';
+export { DEFAULT_CONTROLS_WITH_CREATION, DEFAULT_CONTROLS_WITHOUT_CREATION } from './components/buttons/defaultToolbarControls';
