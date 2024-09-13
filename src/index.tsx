@@ -1,10 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { ExampleApp } from './ExampleApp';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { App } from './app';
+import { store } from './store';
 
-const APP_ELEMENT = document.getElementById('app')!;
-const render = (Component: React.ComponentClass<any>) => {
-  ReactDOM.render(<Component />, APP_ELEMENT);
-};
+const APP_ELEMENT = document.getElementById('app');
 
-render(ExampleApp);
+if (APP_ELEMENT) {
+  const root = createRoot(APP_ELEMENT);
+  root.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+  );
+}

@@ -37,6 +37,7 @@
     "version": "npm-run-all test bundle && git add -A docs/"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.7",
     "classnames": "^2.3.2",
     "immutability-helper": "^3.1.1",
     "json-server": "^1.0.0-beta.2",
@@ -47,6 +48,7 @@
     "react-dnd-html5-backend": "^16.0.1",
     "react-dnd-multi-backend": "^8.0.0",
     "react-dnd-touch-backend": "^16.0.1",
+    "react-redux": "^9.1.2",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
