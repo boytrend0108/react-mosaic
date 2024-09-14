@@ -1,4 +1,4 @@
-type ICompanyValue = string | null;
+export type ICompanyValue = string | null;
 
 export interface ICompany {
   id: ICompanyValue,

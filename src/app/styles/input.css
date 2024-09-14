@@ -1,0 +1,7 @@
+* {
+  color: rgb(43, 23, 230);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

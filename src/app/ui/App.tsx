@@ -2,7 +2,7 @@ import { Classes, HTMLSelect } from '@blueprintjs/core';
 import { IconNames } from '@blueprintjs/icons';
 import classNames from 'classnames';
 import dropRight from 'lodash/dropRight';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   Corner,
@@ -21,39 +21,34 @@ import {
   updateTree,
 } from '../../';
 
-// import { CloseAdditionalControlsButton } from '../components/CloseAdditionalControlsButton';
-
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
-import '../index.less';
-import '../../shared/styles/carbon.less';
-import '../../shared/styles/example.less';
-// import { CompanyInfo } from '../components/CompanyInfo';
-// import { THEMES } from '../shared/consts';
+import '../styles/index.less';
 import { CloseAdditionalControlsButton } from '../../components/CloseAdditionalControlsButton';
 import { THEMES } from '../../shared/consts';
-import { CompanyInfo } from '../../components/CompanyInfo';
+import { Company, companyApi } from '../../entities/Company';
+import { initialMosaicConfig } from '../configs/initialMosaicConfig';
+import { ICompany, ICompanyValue } from '../../entities/Company/types/companyTypes';
 
-// const gitHubLogo = require('./assets/GitHub-Mark-Light-32px.png');
 const gitHubLogo = require('../../shared/assets/GitHub-Mark-Light-32px.png');
 
 export type Theme = keyof typeof THEMES;
+type CompanyData = Pick<ICompany, 'id' | 'name'>;
 
 const additionalControls = React.Children.toArray([<CloseAdditionalControlsButton />]);
 
 export const App: React.FC = () => {
-  const [currentNode, setCurrentNode] = useState<MosaicNode<number> | null>({
-    direction: 'row',
-    first: 1,
-    second: {
-      direction: 'column',
-      first: 2,
-      second: 3,
-    },
-    splitPercentage: 40,
-  });
+  const [currentNode, setCurrentNode] = useState<MosaicNode<number> | null>(initialMosaicConfig);
   const [currentTheme, setCurrentTheme] = useState<Theme>('Blueprint');
   const totalWindowCount = getLeaves(currentNode || null).length;
+  const [companiesData, setCompaniesData] = useState<CompanyData[]>([]);
+  const { data } = companyApi.useGetAllCompaniesQuery('');
+
+  useEffect(() => {
+    if (data) {
+      setCompaniesData(data.map((el) => ({ id: el.id, name: el.name })));
+    }
+  }, [data]);
 
   const onChange = (newCurrentNode: MosaicNode<number> | null) => {
     setCurrentNode(newCurrentNode);
@@ -145,9 +140,16 @@ export const App: React.FC = () => {
       <div className="react-mosaic-example-app">
         {renderNavBar()}
         <Mosaic<number>
-          renderTile={(count, path) => (
-            <ExampleWindow count={count} path={path} totalWindowCount={totalWindowCount} companyId="com_NX6GzO" />
-          )}
+          renderTile={(count, path) => {
+            return (
+              <ExampleWindow
+                count={count}
+                path={path}
+                totalWindowCount={totalWindowCount}
+                companyId={companiesData[1]?.id}
+              />
+            );
+          }}
           zeroStateView={<MosaicZeroState createNode={() => totalWindowCount + 1} />}
           value={currentNode}
           onChange={onChange}
@@ -164,7 +166,7 @@ interface ExampleWindowProps {
   count: number;
   path: MosaicBranch[];
   totalWindowCount: number;
-  companyId: string;
+  companyId: ICompanyValue;
 }
 
 const ExampleWindow = ({ count, path, totalWindowCount, companyId }: ExampleWindowProps) => {
@@ -178,8 +180,7 @@ const ExampleWindow = ({ count, path, totalWindowCount, companyId }: ExampleWind
       onDragEnd={(type) => console.log('MosaicWindow.onDragEnd', type)}
     >
       <div className="example-window">
-        <h1>{`Window ${count}`}</h1>
-        <CompanyInfo companyId={companyId} />
+        <Company companyId={companyId} />
       </div>
     </MosaicWindow>
   );

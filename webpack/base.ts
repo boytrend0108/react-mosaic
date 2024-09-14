@@ -40,15 +40,19 @@ const config: webpack.Configuration = {
         loader: 'source-map-loader',
       },
       {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader', {
+          loader: 'postcss-loader',
+          options: {
+            postcssOptions: {
+              ident: 'postcss',
+              plugins: [
+                require('tailwindcss'),
+                require('autoprefixer'),
+              ],
+            },
           },
-          {
-            loader: 'css-loader',
-          },
-        ],
+        }],
       },
       {
         test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff2?$|\.ttf$|\.eot$/,
