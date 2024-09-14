@@ -146,7 +146,7 @@ export const App: React.FC = () => {
                 count={count}
                 path={path}
                 totalWindowCount={totalWindowCount}
-                companyId={companiesData[1]?.id}
+                companyId={companiesData[count]?.id}
               />
             );
           }}
@@ -179,7 +179,7 @@ const ExampleWindow = ({ count, path, totalWindowCount, companyId }: ExampleWind
       onDragStart={() => console.log('MosaicWindow.onDragStart')}
       onDragEnd={(type) => console.log('MosaicWindow.onDragEnd', type)}
     >
-      <div className="example-window">
+      <div className="example-window overflow-auto">
         <Company companyId={companyId} />
       </div>
     </MosaicWindow>

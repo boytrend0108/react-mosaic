@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ICompany } from '../types/companyTypes'
+import { ICompany, ICompanyValue } from '../types/companyTypes'
 
 export const companyApi = createApi({
   reducerPath: 'companyApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000' }),
   endpoints: (builder) => ({
-    getCompanyById: builder.query<ICompany, string>({
+    getCompanyById: builder.query<ICompany, ICompanyValue>({
       query: (id) => `company/${id}`,
     }),
 
