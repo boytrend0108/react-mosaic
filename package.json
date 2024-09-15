@@ -3,36 +3,18 @@
   "version": "6.1.0",
   "description": "A React Tiling Window Manager",
   "license": "Apache-2.0",
-  "main": "lib/index.js",
-  "style": "lib/react-mosaic.css",
   "type": "commonjs",
-  "typings": "lib/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nomcopter/react-mosaic.git"
-  },
-  "funding": "https://github.com/nomcopter/react-mosaic?sponsor=1",
-  "keywords": [
-    "ui",
-    "react",
-    "component",
-    "typescript",
-    "tiling-window-manager",
-    "window-manager"
-  ],
   "sideEffects": [
     "*.css"
   ],
   "scripts": {
     "dev": "webpack-dev-server --config webpack/hot.ts --port 3001",
-    "json-server": "json-server ./src/db/db.json",
-    "build": "npm-run-all clean -lp build:**",
-    "build:ts": "tsc -p ./tsconfig-build.json",
+    "json-server": "json-server ./db/db.json",
+    "build": "npm-run-all -lp build:**",
     "build:less": "lessc --autoprefix src/app/styles/index.less src/app/styles/react-mosaic-component.css",
-    "bundle": "rm -rf / && webpack --config webpack/bundle.ts",
-    "clean": "rm -rf lib/",
+    "bundle": "webpack --config webpack/bundle.ts",
     "start": "concurrently \"npm run dev\" \"npm run json-server\" \"npm run tailwind\"",
-    "start:prod": "npm-run-all build bundle && json-server ./src/db/db.json",
+    "start:prod": "npm-run-all build bundle && json-server ./db/db.json",
     "prettier:run": "prettier 'styles/*.less' '*.md' '{,.}*.yml' '.circleci/*.yml'",
     "fix": "npm-run-all -lp fix:**",
     "fix:format": "yarn run prettier:run --write",
