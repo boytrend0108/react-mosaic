@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React from 'react';
-import { ICompanyValue } from '../../entities/Company/types/companyTypes';
+import { ICompanyValue } from '../../entities/Company/lib/types/companyTypes';
 
 interface Props {
   className?: string;

@@ -2,7 +2,7 @@ import { Classes, HTMLSelect } from '@blueprintjs/core';
 import { IconNames } from '@blueprintjs/icons';
 import classNames from 'classnames';
 import dropRight from 'lodash/dropRight';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import {
   Corner,
@@ -25,30 +25,22 @@ import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
 import '../styles/index.less';
 import { CloseAdditionalControlsButton } from '../../components/CloseAdditionalControlsButton';
-import { THEMES } from '../../shared/consts';
-import { Company, companyApi } from '../../entities/Company';
+import { THEMES } from '../../shared/lib/consts/consts';
+import { Company } from '../../entities/Company';
 import { initialMosaicConfig } from '../configs/initialMosaicConfig';
-import { ICompany, ICompanyValue } from '../../entities/Company/types/companyTypes';
+import { ICompanyValue } from '../../entities/Company/lib/types/companyTypes';
+import { useCompaniesData } from '../../shared/lib/hooks/useGetCompanies';
+import { useAppSelector } from '../../shared/lib/hooks/store';
 
 const gitHubLogo = require('../../shared/assets/GitHub-Mark-Light-32px.png');
 
 export type Theme = keyof typeof THEMES;
-type CompanyData = Pick<ICompany, 'id' | 'name'>;
-
-const additionalControls = React.Children.toArray([<CloseAdditionalControlsButton />]);
 
 export const App: React.FC = () => {
   const [currentNode, setCurrentNode] = useState<MosaicNode<number> | null>(initialMosaicConfig);
   const [currentTheme, setCurrentTheme] = useState<Theme>('Blueprint');
   const totalWindowCount = getLeaves(currentNode || null).length;
-  const [companiesData, setCompaniesData] = useState<CompanyData[]>([]);
-  const { data } = companyApi.useGetAllCompaniesQuery('');
-
-  useEffect(() => {
-    if (data) {
-      setCompaniesData(data.map((el) => ({ id: el.id, name: el.name })));
-    }
-  }, [data]);
+  const { briefCompaniesData } = useCompaniesData();
 
   const onChange = (newCurrentNode: MosaicNode<number> | null) => {
     setCurrentNode(newCurrentNode);
@@ -146,8 +138,8 @@ export const App: React.FC = () => {
                 count={count}
                 path={path}
                 totalWindowCount={totalWindowCount}
-                companyId={companiesData[count]?.id}
-                companyName={companiesData[count]?.name as string}
+                companyId={briefCompaniesData[count]?.id}
+                companyName={briefCompaniesData[count]?.name as string}
               />
             );
           }}
@@ -171,18 +163,36 @@ interface ExampleWindowProps {
   companyName: string;
 }
 
-const ExampleWindow = ({ path, totalWindowCount, companyId, companyName }: ExampleWindowProps) => {
+const ExampleWindow = (props: ExampleWindowProps) => {
+  const { path, totalWindowCount, companyId, companyName, count } = props;
+  const additionalControls = React.Children.toArray([<CloseAdditionalControlsButton count={count} />]);
+  const { selectedWindow } = useAppSelector((state) => state.appReducer);
+
+  const { selectedId, selectedCompanyName } = setSelectedCompanyId();
+
+  type setSelectedCompanyIdProps = {
+    selectedId: ICompanyValue;
+    selectedCompanyName: ICompanyValue;
+  };
+  function setSelectedCompanyId(): setSelectedCompanyIdProps {
+    if (!selectedWindow || selectedWindow.count !== count) {
+      return { selectedId: companyId, selectedCompanyName: companyName };
+    }
+
+    return { selectedId: selectedWindow.id, selectedCompanyName: selectedWindow.name };
+  }
+
   return (
     <MosaicWindow<number>
       additionalControls={additionalControls}
-      title={companyName}
+      title={selectedCompanyName as string}
       createNode={() => totalWindowCount + 1}
       path={path}
       onDragStart={() => console.log('MosaicWindow.onDragStart')}
       onDragEnd={(type) => console.log('MosaicWindow.onDragEnd', type)}
     >
       <div className="example-window overflow-auto">
-        <Company companyId={companyId} />
+        <Company companyId={selectedId} />
       </div>
     </MosaicWindow>
   );

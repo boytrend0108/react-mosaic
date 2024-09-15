@@ -66,7 +66,7 @@ export class InternalMosaicWindow<T extends MosaicKey> extends React.Component<
   InternalMosaicWindowState
 > {
   static defaultProps: Partial<InternalMosaicWindowProps<any>> = {
-    additionalControlButtonText: 'More',
+    additionalControlButtonText: 'Select company',
     draggable: true,
     renderPreview: ({ title }) => (
       <div className="mosaic-preview">
@@ -122,7 +122,7 @@ export class InternalMosaicWindow<T extends MosaicKey> extends React.Component<
                 }}
               />
             )}
-            <div className="mosaic-window-additional-actions-bar">{additionalControls}</div>
+            <div className="mosaic-window-additional-actions-bar h-fit">{additionalControls}</div>
             {connectDragPreview(renderPreview!(this.props))}
             <div className="drop-target-container">
               {values<MosaicDropTargetPosition>(MosaicDropTargetPosition).map(this.renderDropTarget)}

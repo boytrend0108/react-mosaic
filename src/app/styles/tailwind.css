@@ -679,6 +679,15 @@ video {
   display: none
 }
 
+.h-full {
+  height: 100%
+}
+
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content
+}
+
 .w-full {
   width: 100%
 }
@@ -705,6 +714,14 @@ video {
 
 .flex-col {
   flex-direction: column
+}
+
+.items-center {
+  align-items: center
+}
+
+.justify-center {
+  justify-content: center
 }
 
 .gap-2 {

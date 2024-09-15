@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 import { companyApi } from '../api/companyApi';
-import { ICompanyValue } from '../types/companyTypes';
+import { ICompanyValue } from '../lib/types/companyTypes';
 import { MyCompanyOption } from '../../../shared/ui/MyCompanyOption';
+import { MyLoader } from '../../../shared/ui/MyLoader';
 
 interface Props {
   companyId: ICompanyValue;
@@ -9,16 +10,19 @@ interface Props {
 
 export const Company: React.FC<Props> = memo(({ companyId }) => {
   const { data, error, isLoading } = companyApi.useGetCompanyByIdQuery(companyId);
-  console.log(data);
-  return (
-    <article className="Company w-full flex flex-col gap-2">
-      {isLoading && <h2>Loading...</h2>}
-      {error && <h2>Error</h2>}
 
-      {!isLoading &&
-        !error &&
-        data &&
-        Object.entries(data).map(([key, value]) => <MyCompanyOption key={key} optionKey={key} value={value} />)}
+  return (
+    <article className="Company w-full h-full flex flex-col gap-2">
+      {isLoading && <MyLoader />}
+      {error && <h2>Upps... Something went wrong...</h2>}
+
+      {!isLoading && !error && data && (
+        <div className="flex flex-col gap-2">
+          {Object.entries(data).map(([key, value]) => (
+            <MyCompanyOption key={key} optionKey={key} value={value} />
+          ))}
+        </div>
+      )}
     </article>
   );
 });

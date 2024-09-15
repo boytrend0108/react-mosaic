@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ICompany, ICompanyValue } from '../types/companyTypes'
+import { ICompany, ICompanyValue } from '../lib/types/companyTypes'
 
 export const companyApi = createApi({
   reducerPath: 'companyApi',
