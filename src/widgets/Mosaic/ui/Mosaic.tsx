@@ -9,13 +9,25 @@ import { DndProvider } from 'react-dnd';
 import { MultiBackend } from 'react-dnd-multi-backend';
 import { v4 as uuid } from 'uuid';
 
-import { MosaicContext, MosaicRootActions } from '../types/contextTypes';
-import { MosaicRoot } from './MosaicRoot';
-import { MosaicZeroState } from './MosaicZeroState';
-import { RootDropTargets } from './RootDropTargets';
-import { MosaicKey, MosaicNode, MosaicPath, MosaicUpdate, ResizeOptions, TileRenderer } from '../types/types';
-import { createExpandUpdate, createHideUpdate, createRemoveUpdate, updateTree } from '../util/mosaicUpdates';
-import { getLeaves } from '../util/mosaicUtilities';
+import { MosaicContext, MosaicRootActions } from '../../../shared/lib/types/contextTypes';
+import { MosaicRoot } from '../../MosaicRoot/ui/MosaicRoot';
+import { RootDropTargets } from '../../RootDropTargets/ui/RootDropTargets';
+import {
+  MosaicKey,
+  MosaicNode,
+  MosaicPath,
+  MosaicUpdate,
+  ResizeOptions,
+  TileRenderer,
+} from '../../../shared/lib/types/types';
+import {
+  createExpandUpdate,
+  createHideUpdate,
+  createRemoveUpdate,
+  updateTree,
+} from '../../../shared/lib/utils/mosaicUpdates';
+import { getLeaves } from '../../../shared/lib/utils/mosaicUtilities';
+import { MosaicZeroState } from '../../..';
 
 const DEFAULT_EXPAND_PERCENTAGE = 70;
 

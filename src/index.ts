@@ -5,7 +5,7 @@ export {
   MosaicUncontrolledProps,
   MosaicControlledProps,
   MosaicWithoutDragDropContext,
-} from './components/Mosaic';
+} from './widgets/Mosaic/ui/Mosaic';
 export {
   MosaicNode,
   MosaicDragType,
@@ -17,8 +17,8 @@ export {
   MosaicUpdate,
   MosaicUpdateSpec,
   TileRenderer,
-} from './types/types';
-export { MosaicContext, MosaicRootActions, MosaicWindowActions, MosaicWindowContext } from './types/contextTypes';
+} from './shared/lib/types/types';
+export { MosaicContext, MosaicRootActions, MosaicWindowActions, MosaicWindowContext } from './shared/lib/types/contextTypes';
 export {
   buildSpecFromUpdate,
   createDragToUpdates,
@@ -26,7 +26,7 @@ export {
   createHideUpdate,
   createRemoveUpdate,
   updateTree,
-} from './util/mosaicUpdates';
+} from './shared/lib/utils/mosaicUpdates';
 export {
   createBalancedTreeFromLeaves,
   Corner,
@@ -37,13 +37,13 @@ export {
   getOtherDirection,
   getPathToCorner,
   isParent,
-} from './util/mosaicUtilities';
-export { MosaicWindow, MosaicWindowProps } from './components/MosaicWindow';
-export { createDefaultToolbarButton, DefaultToolbarButton, MosaicButtonProps } from './components/buttons/MosaicButton';
-export { MosaicZeroState, MosaicZeroStateProps } from './components/MosaicZeroState';
-export { Separator } from './components/buttons/Separator';
-export { ExpandButton } from './components/buttons/ExpandButton';
-export { ReplaceButton } from './components/buttons/ReplaceButton';
-export { SplitButton } from './components/buttons/SplitButton';
-export { RemoveButton } from './components/buttons/RemoveButton';
-export { DEFAULT_CONTROLS_WITH_CREATION, DEFAULT_CONTROLS_WITHOUT_CREATION } from './components/buttons/defaultToolbarControls';
+} from './shared/lib/utils/mosaicUtilities';
+export { MosaicWindow, MosaicWindowProps } from './widgets/MosaicWindow/ui/MosaicWindow';
+export { createDefaultToolbarButton, DefaultToolbarButton, MosaicButtonProps } from './shared/ui/buttons/MosaicButton';
+export { MosaicZeroState, MosaicZeroStateProps } from './widgets/MosaicZeroState';
+export { Separator } from './shared/ui/buttons/Separator';
+export { ExpandButton } from './shared/ui/buttons/ExpandButton';
+export { ReplaceButton } from './shared/ui/buttons/ReplaceButton';
+export { SplitButton } from './shared/ui/buttons/SplitButton';
+export { RemoveButton } from './shared/ui/buttons/RemoveButton';
+export { DEFAULT_CONTROLS_WITH_CREATION, DEFAULT_CONTROLS_WITHOUT_CREATION } from './shared/ui/buttons/defaultToolbarControls';

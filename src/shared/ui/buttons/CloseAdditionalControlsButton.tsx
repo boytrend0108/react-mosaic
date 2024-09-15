@@ -1,12 +1,12 @@
 import { Classes } from '@blueprintjs/core';
 import classNames from 'classnames';
 import React from 'react';
-import { useAppDispatch } from '../shared/lib/hooks/store';
-import { ICompanyValue } from '../entities/Company/lib/types/companyTypes';
-import { useCompaniesData } from '../shared/lib/hooks/useGetCompanies';
+import { useAppDispatch } from '../../lib/hooks/store';
+import { ICompanyValue } from '../../../entities/Company/lib/types/companyTypes';
+import { useCompaniesData } from '../../lib/hooks/useGetCompanies';
 
-import { MosaicWindowContext } from '../types/contextTypes';
-import * as appAction from '../shared/store/appSlice';
+import { MosaicWindowContext } from '../../lib/types/contextTypes';
+import * as appAction from '../../store/appSlice';
 
 type Props = {
   count: number;

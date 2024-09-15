@@ -1,4 +1,4 @@
-import { MosaicNode } from "../../types/types";
+import { MosaicNode } from "../../shared/lib/types/types";
 
 export const initialMosaicConfig: MosaicNode<number> = {
   direction: 'row',

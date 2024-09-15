@@ -1,8 +1,6 @@
 @import '../../shared/styles/constants.css';
+@import '../styles/themes/index.css';
 
-* {
-  color: var(--primary-color);
-}
 
 .example-window::-webkit-scrollbar {
   width: 10px;

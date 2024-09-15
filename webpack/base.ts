@@ -11,6 +11,9 @@ const config: webpack.Configuration = {
   devtool: 'source-map',
   resolve: {
     extensions: ['.webpack.js', '.web.js', '.json', '.ts', '.js', '.tsx'],
+    preferAbsolute: true,
+    alias: {},
+    mainFiles: ['index']
   },
   optimization: {
     moduleIds: 'named',

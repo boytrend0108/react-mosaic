@@ -2,9 +2,9 @@ import classNames from 'classnames';
 import React, { useContext } from 'react';
 import { useDrop } from 'react-dnd';
 
-import { MosaicContext } from '../types/contextTypes';
-import { MosaicDragItem, MosaicDropData, MosaicDropTargetPosition } from '../types/internalTypes';
-import { MosaicDragType, MosaicPath } from '../types/types';
+import { MosaicContext } from '../../../shared/lib/types/contextTypes';
+import { MosaicDragItem, MosaicDropData, MosaicDropTargetPosition } from '../../../shared/lib/types/internalTypes';
+import { MosaicDragType, MosaicPath } from '../../../shared/lib/types/types';
 
 export interface MosaicDropTargetProps {
   position: MosaicDropTargetPosition;

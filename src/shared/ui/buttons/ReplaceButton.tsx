@@ -2,30 +2,30 @@ import classNames from 'classnames';
 import noop from 'lodash/noop';
 import React from 'react';
 
-import { MosaicWindowContext } from '../../types/contextTypes';
-import { OptionalBlueprint } from '../../util/OptionalBlueprint';
+import { MosaicWindowContext } from '../../lib/types/contextTypes';
+import { OptionalBlueprint } from '../../lib/utils/OptionalBlueprint';
 import { DefaultToolbarButton, MosaicButtonProps } from './MosaicButton';
 
-export class SplitButton extends React.PureComponent<MosaicButtonProps> {
+export class ReplaceButton extends React.PureComponent<MosaicButtonProps> {
   static contextType = MosaicWindowContext;
   context!: MosaicWindowContext;
 
   render() {
     return (
       <DefaultToolbarButton
-        title="Split Window"
+        title="Replace Window"
         className={classNames(
-          'split-button',
-          OptionalBlueprint.getIconClass(this.context.blueprintNamespace, 'ADD_COLUMN_RIGHT'),
+          'replace-button',
+          OptionalBlueprint.getIconClass(this.context.blueprintNamespace, 'EXCHANGE'),
         )}
-        onClick={this.split}
+        onClick={this.replace}
       />
     );
   }
 
-  private split = () => {
+  private replace = () => {
     this.context.mosaicWindowActions
-      .split()
+      .replaceWithNew()
       .then(() => {
         if (this.props.onClick) {
           this.props.onClick();

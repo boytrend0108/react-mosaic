@@ -14,15 +14,18 @@ import {
   useDrop,
 } from 'react-dnd';
 
-import { DEFAULT_CONTROLS_WITHOUT_CREATION, DEFAULT_CONTROLS_WITH_CREATION } from './buttons/defaultToolbarControls';
-import { Separator } from './buttons/Separator';
-import { MosaicContext, MosaicWindowContext } from '../types/contextTypes';
-import { MosaicDragItem, MosaicDropData, MosaicDropTargetPosition } from '../types/internalTypes';
-import { MosaicDropTarget } from './MosaicDropTarget';
-import { CreateNode, MosaicBranch, MosaicDirection, MosaicDragType, MosaicKey } from '../types/types';
-import { createDragToUpdates } from '../util/mosaicUpdates';
-import { getAndAssertNodeAtPathExists } from '../util/mosaicUtilities';
-import { OptionalBlueprint } from '../util/OptionalBlueprint';
+import {
+  DEFAULT_CONTROLS_WITHOUT_CREATION,
+  DEFAULT_CONTROLS_WITH_CREATION,
+} from '../../../shared/ui/buttons/defaultToolbarControls';
+import { Separator } from '../../../shared/ui/buttons/Separator';
+import { MosaicContext, MosaicWindowContext } from '../../../shared/lib/types/contextTypes';
+import { MosaicDragItem, MosaicDropData, MosaicDropTargetPosition } from '../../../shared/lib/types/internalTypes';
+import { MosaicDropTarget } from '../../MosaicDropTarget/ui/MosaicDropTarget';
+import { CreateNode, MosaicBranch, MosaicDirection, MosaicDragType, MosaicKey } from '../../../shared/lib/types/types';
+import { createDragToUpdates } from '../../../shared/lib/utils/mosaicUpdates';
+import { getAndAssertNodeAtPathExists } from '../../../shared/lib/utils/mosaicUtilities';
+import { OptionalBlueprint } from '../../../shared/lib/utils/OptionalBlueprint';
 
 export interface MosaicWindowProps<T extends MosaicKey> {
   title: string;

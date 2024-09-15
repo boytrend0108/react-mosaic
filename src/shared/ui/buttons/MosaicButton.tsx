@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
-import { MosaicContext } from '../../types/contextTypes';
+import { MosaicContext } from '../../lib/types/contextTypes';
 
-import { OptionalBlueprint } from '../../util/OptionalBlueprint';
+import { OptionalBlueprint } from '../../lib/utils/OptionalBlueprint';
 
 export const DefaultToolbarButton = ({
   title,

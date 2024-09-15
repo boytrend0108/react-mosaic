@@ -3,6 +3,7 @@ import { companyApi } from '../api/companyApi';
 import { ICompanyValue } from '../lib/types/companyTypes';
 import { MyCompanyOption } from '../../../shared/ui/MyCompanyOption';
 import { MyLoader } from '../../../shared/ui/MyLoader';
+import classNames from 'classnames';
 
 interface Props {
   companyId: ICompanyValue;
@@ -12,7 +13,7 @@ export const Company: React.FC<Props> = memo(({ companyId }) => {
   const { data, error, isLoading } = companyApi.useGetCompanyByIdQuery(companyId);
 
   return (
-    <article className="Company w-full h-full flex flex-col gap-2">
+    <article className={classNames('company w-full h-full flex flex-col gap-2')}>
       {isLoading && <MyLoader />}
       {error && <h2>Upps... Something went wrong...</h2>}
 

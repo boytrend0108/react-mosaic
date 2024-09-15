@@ -2,9 +2,9 @@ import classNames from 'classnames';
 import clamp from 'lodash/clamp';
 import throttle from 'lodash/throttle';
 import React from 'react';
+import { BoundingBox } from '../../../shared/lib/utils/BoundingBox';
 
-import { EnabledResizeOptions, MosaicDirection } from '../types/types';
-import { BoundingBox } from '../util/BoundingBox';
+import { EnabledResizeOptions, MosaicDirection } from '../../../shared/lib/types/types';
 
 const RESIZE_THROTTLE_MS = 1000 / 30; // 30 fps
 

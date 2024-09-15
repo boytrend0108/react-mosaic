@@ -2,31 +2,17 @@ import React from 'react';
 
 import { MosaicKey, MosaicNode, MosaicPath, MosaicUpdate } from './types';
 
-/**
- * Mosaic provides functionality on the context for components within
- * Mosaic to affect the view state.
- */
-
-/**
- * Context provided to everything within Mosaic
- */
 export interface MosaicContext<T extends MosaicKey> {
   mosaicActions: MosaicRootActions<T>;
   mosaicId: string;
   blueprintNamespace: string;
 }
 
-/**
- * Context provided to everything within a Mosaic Window
- */
 export interface MosaicWindowContext {
   blueprintNamespace: string;
   mosaicWindowActions: MosaicWindowActions;
 }
 
-/**
- * These actions are used to alter the state of the view tree
- */
 export interface MosaicRootActions<T extends MosaicKey> {
   /**
    * Increases the size of this node and bubbles up the tree
@@ -56,37 +42,14 @@ export interface MosaicRootActions<T extends MosaicKey> {
    * @param suppressOnRelease (default: false)
    */
   updateTree: (updates: MosaicUpdate<T>[], suppressOnRelease?: boolean) => void;
-  /**
-   * Returns the root of this Mosaic instance
-   */
   getRoot: () => MosaicNode<T> | null;
 }
 
 export interface MosaicWindowActions {
-  /**
-   * Fails if no `createNode()` is defined
-   * Creates a new node and splits the current node.
-   * The current node becomes the `first` and the new node the `second` of the result.
-   * `direction` is chosen by querying the DOM and splitting along the longer axis
-   */
   split: (...args: any[]) => Promise<void>;
-  /**
-   * Fails if no `createNode()` is defined
-   * Convenience function to call `createNode()` and replace the current node with it.
-   */
   replaceWithNew: (...args: any[]) => Promise<void>;
-  /**
-   * Sets the open state for the tray that holds additional controls.
-   * Pass 'toggle' to invert the current state.
-   */
   setAdditionalControlsOpen: (open: boolean | 'toggle') => void;
-  /**
-   * Returns the path to this window
-   */
   getPath: () => MosaicPath;
-  /**
-   * Enables connecting a different drag source besides the react-mosaic toolbar
-   */
   connectDragSource: (connectedElements: React.ReactElement<any>) => React.ReactElement | null;
 }
 
