@@ -13,7 +13,7 @@ const hotConfig: webpack.Configuration = {
     runtimeChunk: 'single',
   },
   devServer: {
-    static: CONSTANTS.DOCS_DIR,
+    static: CONSTANTS.DIST_DIR,
     historyApiFallback: true,
     hot: true,
     host: '0.0.0.0',

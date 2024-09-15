@@ -6,7 +6,7 @@ const config: webpack.Configuration = {
   entry: CONSTANTS.APP_ENTRY,
   output: {
     filename: '[name].js',
-    path: CONSTANTS.DOCS_DIR,
+    path: CONSTANTS.DIST_DIR,
   },
   devtool: 'source-map',
   resolve: {
@@ -35,6 +35,7 @@ const config: webpack.Configuration = {
           },
         ],
       },
+
       {
         test: /node_modules.*\.js$/,
         loader: 'source-map-loader',

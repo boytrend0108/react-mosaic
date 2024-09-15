@@ -147,6 +147,7 @@ export const App: React.FC = () => {
                 path={path}
                 totalWindowCount={totalWindowCount}
                 companyId={companiesData[count]?.id}
+                companyName={companiesData[count]?.name as string}
               />
             );
           }}
@@ -167,13 +168,14 @@ interface ExampleWindowProps {
   path: MosaicBranch[];
   totalWindowCount: number;
   companyId: ICompanyValue;
+  companyName: string;
 }
 
-const ExampleWindow = ({ count, path, totalWindowCount, companyId }: ExampleWindowProps) => {
+const ExampleWindow = ({ path, totalWindowCount, companyId, companyName }: ExampleWindowProps) => {
   return (
     <MosaicWindow<number>
       additionalControls={additionalControls}
-      title={`Window ${count}`}
+      title={companyName}
       createNode={() => totalWindowCount + 1}
       path={path}
       onDragStart={() => console.log('MosaicWindow.onDragStart')}
