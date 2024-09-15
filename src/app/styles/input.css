@@ -1,5 +1,4 @@
 @import '../../shared/styles/constants.css';
-@import '../styles/themes/index.css';
 
 .example-window::-webkit-scrollbar {
   width: 10px;

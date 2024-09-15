@@ -1,4 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import path from 'path';
 import webpack from 'webpack';
 import { CONSTANTS } from './constants';
 
@@ -12,7 +14,9 @@ const config: webpack.Configuration = {
   resolve: {
     extensions: ['.webpack.js', '.web.js', '.json', '.ts', '.js', '.tsx'],
     preferAbsolute: true,
-    alias: {},
+    alias: {
+      '@images': path.resolve(__dirname, '..', 'src/shared/assets/images'),
+    },
     mainFiles: ['index']
   },
   optimization: {
@@ -59,8 +63,12 @@ const config: webpack.Configuration = {
         }],
       },
       {
-        test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff2?$|\.ttf$|\.eot$/,
-        type: 'asset/resource',
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
       {
         test: /\.less/,
@@ -81,6 +89,11 @@ const config: webpack.Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: CONSTANTS.HTML_TEMPLATE,
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public/images', to: 'images' }
+      ],
     }),
   ],
 };

@@ -3,16 +3,6 @@
   --inverted-primary-color: #dce0e5;
 }
 
-.company.dark {
-  --primary-color: #dce0e5;
-  --inverted-primary-color: #404854;
-}
-
-.company.Blueprint {
-  --primary-color: #404854;
-  --inverted-primary-color: #dce0e5;
-}
-
 .example-window::-webkit-scrollbar {
   width: 10px;
 }
@@ -22,6 +12,20 @@
 }
 
 .example-window::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  outline: 1px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.companies-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.companies-list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.companies-list::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
   outline: 1px solid var(--primary-color);
   border-radius: 5px;
@@ -683,6 +687,10 @@ video {
 
 .hidden {
   display: none;
+}
+
+.h-10 {
+  height: 2.5rem;
 }
 
 .h-fit {

@@ -22,7 +22,7 @@ export const Navbar: React.FC<Props> = (props) => {
     <div className={classNames(Classes.NAVBAR, Classes.DARK)}>
       <div className={Classes.NAVBAR_GROUP}>
         <div className={Classes.NAVBAR_HEADING}>
-          <a href="/">react-mosaic</a>
+          <a href="/">SynergyWay</a>
         </div>
       </div>
 
@@ -52,8 +52,8 @@ export const Navbar: React.FC<Props> = (props) => {
           Add Window to Top Right
         </button>
 
-        <a className="github-link" href="https://github.com/nomcopter/react-mosaic">
-          <img src="GitHub.png" />
+        <a className="github-link flex" href="/">
+          <img src="https://synergy-way.com/wp-content/themes/synergy-new/favicon.ico" alt="logo" />
         </a>
       </div>
     </div>
