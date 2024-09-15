@@ -1,0 +1,13 @@
+.companies-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.companies-list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.companies-list::-webkit-scrollbar-thumb {
+  background-color: #738091;
+  outline: 1px solid #738091;
+  border-radius: 5px;
+}

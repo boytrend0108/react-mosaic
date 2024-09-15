@@ -16,7 +16,7 @@ export const App: React.FC = () => {
   const [currentNode, setCurrentNode] = useState<MosaicNode<number> | null>(initialMosaicConfig);
   const [currentTheme, setCurrentTheme] = useState<Theme>('Blueprint');
   const totalWindowCount = getLeaves(currentNode || null).length;
-  const { briefCompaniesData } = useCompaniesData();
+  useCompaniesData();
 
   return (
     <React.StrictMode>
@@ -30,15 +30,7 @@ export const App: React.FC = () => {
 
         <Mosaic<number>
           renderTile={(count, path) => {
-            return (
-              <ExampleWindow
-                count={count}
-                path={path}
-                totalWindowCount={totalWindowCount}
-                companyId={briefCompaniesData[count]?.id}
-                companyName={briefCompaniesData[count]?.name as string}
-              />
-            );
+            return <ExampleWindow count={count} path={path} totalWindowCount={totalWindowCount} />;
           }}
           zeroStateView={<MosaicZeroState createNode={() => totalWindowCount + 1} />}
           value={currentNode}

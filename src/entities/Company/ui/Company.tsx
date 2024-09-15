@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
+import classNames from 'classnames';
 import { companyApi } from '../api/companyApi';
 import { ICompanyValue } from '../lib/types/companyTypes';
 import { MyCompanyOption } from '../../../shared/ui/MyCompanyOption';
 import { MyLoader } from '../../../shared/ui/MyLoader';
-import classNames from 'classnames';
 
 interface Props {
   companyId: ICompanyValue;

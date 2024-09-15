@@ -2,18 +2,23 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { ICompanyValue } from '../../entities/Company/lib/types/companyTypes'
 
-interface SelectedWindow {
-  count: number,
+interface CompanyListItem {
   id: ICompanyValue
   name: ICompanyValue;
 }
 
+export interface SelectedWindow extends CompanyListItem {
+  count: number,
+}
+
 export interface AppState {
-  selectedWindow: SelectedWindow | null
+  selectedWindows: Record<number, SelectedWindow>;
+  companiesList: CompanyListItem[]
 }
 
 const initialState: AppState = {
-  selectedWindow: null,
+  selectedWindows: {},
+  companiesList: [],
 }
 
 export const appSlice = createSlice({
@@ -21,11 +26,15 @@ export const appSlice = createSlice({
   initialState,
   reducers: {
     setSelectedWindow: (state, action: PayloadAction<SelectedWindow>) => {
-      state.selectedWindow = action.payload;
+      state.selectedWindows[action.payload.count] = action.payload;
+    },
+
+    setCompaniesList: (state, action: PayloadAction<CompanyListItem>) => {
+      state.companiesList.push(action.payload);
     },
   },
 })
 
-export const { setSelectedWindow } = appSlice.actions
+export const { setSelectedWindow, setCompaniesList } = appSlice.actions
 
 export default appSlice.reducer
