@@ -1,4 +1,5 @@
 # Data Loader - dashboard with 3 Company Information Widgets.
+
 Fetch and display data from a fake API.
 
 - By default, there are 3 windows displaying information from the first 3 companies in a list.
@@ -15,6 +16,7 @@ Fetch and display data from a fake API.
 - Back-end: json-server, docker
 
 ![App Screenshot](https://github.com/boytrend0108/react-mosaic/blob/master/public/images/sinergy.gif)
+<img src="https://github.com/boytrend0108/react-mosaic/blob/master/public/images/sinergy.gif" alt="App Screenshot" width="500" height="300">
 
 ### Getting Started
 
