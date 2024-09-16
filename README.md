@@ -6,53 +6,28 @@ Fetch and display data from a fake API.
 - Users can add, delete, split, and drag and drop windows.
 - Users can select which company will be displayed in the selected window.
 - To store data, we use a fake API: db.json and json-server.
-- There are 3 themes available (Blueprint, Blueprint Dark, None).
+- Are 3 themes available (Blueprint, Blueprint Dark, None).
 - It uses RTK Query to fetch, store, and cache data.
 - There is a Dockerfile to run the app in different environments.
 
 ## Tech Stack
 
-- Front-end: React, Redux, RTK Query, Typescript, Tailwind, Blueprint,
+- Front-end: React, Redux, RTK Query, Typescript, Tailwind, Blueprint, Webpack
 - Back-end: json-server, docker
 
-<img src="https://github.com/boytrend0108/react-mosaic/blob/master/public/images/sinergy.gif" alt="App Screenshot" width="400" height="230">
+<img src="https://github.com/boytrend0108/react-mosaic/blob/master/public/images/sinergy.gif" alt="App Screenshot" width="500" height="300">
 
 ### Getting Started
-
-## Variant A via NPM:
-
-1.Clone the repository:
+1 Download docker image:
 
 ```bash
- https://github.com/boytrend0108/react-mosaic
-```
-
-2.Install the required dependencies for client and server:
-
-```bash
-  npm install
-```
-
-3.Start the development server and client:
-
-```bash
-  npm run start
-```
-
-4.Open `http://localhost:3001` in your browser, server will run on `http://localhost:5000`;
-
-## Variant B via Docker:
-
-1 Dowload docker image:
-
-```bash
- docker pull boytrend/mosaic
+ docker pull boytrend/mosaic:2.2
 ```
 
 2 Start the development server and client:
 
 ```bash
-docker run -p 3001:3001 -p5000:5000 boytrend/mosaic
+docker run -d -p 3001:3001 -p5000:5000 boytrend/mosaic:2.2
 ```
 
 4 Open `http://localhost:3001` in your browser, server will run on `http://localhost:5000`;
