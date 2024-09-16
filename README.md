@@ -6,13 +6,13 @@ Fetch and display data from a fake API.
 - Users can add, delete, split, and drag and drop windows.
 - Users can select which company will be displayed in the selected window.
 - To store data, we use a fake API: db.json and json-server.
-- There are 3 themes available (Blueprint, Blueprint Dark, None).
+- Are 3 themes available (Blueprint, Blueprint Dark, None).
 - It uses RTK Query to fetch, store, and cache data.
 - There is a Dockerfile to run the app in different environments.
 
 ## Tech Stack
 
-- Front-end: React, Redux, RTK Query, Typescript, Tailwind, Blueprint,
+- Front-end: React, Redux, RTK Query, Typescript, Tailwind, Blueprint, Webpack
 - Back-end: json-server, docker
 
 <img src="https://github.com/boytrend0108/react-mosaic/blob/master/public/images/sinergy.gif" alt="App Screenshot" width="500" height="300">
