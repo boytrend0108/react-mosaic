@@ -14,7 +14,7 @@ Fetch and display data from a fake API.
 - Front-end: React, Redux, RTK Query, Typescript, Tailwind, Blueprint,
 - Back-end: json-server, docker
 
-![App Screenshot](https://github.com/boytrend0108/afg_pern/blob/main/screenshots/home.png?raw=true)
+![App Screenshot]([https://github.com/boytrend0108/afg_pern/blob/main/screenshots/home.png?raw=true](https://github.com/boytrend0108/react-mosaic/blob/master/public/images/sinergy.gif?raw=true))
 
 ### Getting Started
 
