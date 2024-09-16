@@ -25,7 +25,7 @@ export const CloseAdditionalControlsButton: React.FC<Props> = (props) => {
 
   return (
     <div className={classNames(Classes.BUTTON_GROUP, Classes.MINIMAL, 'w-full h-25')}>
-      <ul className="companies-list overflow-auto h-10 w-full">
+      <ul className="companies-list overflow-auto h-full w-full">
         {companiesList.map(({ id, name }) => {
           if (name === companyName) {
             return;

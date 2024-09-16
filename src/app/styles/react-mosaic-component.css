@@ -3,19 +3,16 @@
 /* @import (reference) './mixins'; */
 /* Global Styles */
 @import 'tailwind.css';
-
 .mosaic,
-.mosaic>* {
+.mosaic > * {
   box-sizing: border-box;
 }
-
 /* Split Size */
 .split-size {
   /* Replace with your desired split size */
   width: 6px;
   height: 6px;
 }
-
 /* Zero State */
 .mosaic-zero-state {
   padding: 6px;
@@ -33,7 +30,6 @@
   height: auto;
   z-index: 1;
 }
-
 /* Mosaic Root */
 .mosaic-root {
   position: absolute;
@@ -46,23 +42,19 @@
   bottom: 3px;
   /* Split size / 2 */
 }
-
 /* Split */
 .mosaic-split {
   position: absolute;
   z-index: 1;
   -ms-touch-action: none;
-  touch-action: none;
+      touch-action: none;
 }
-
 .mosaic-split:hover {
   background: black;
 }
-
 .mosaic-split-line {
   position: absolute;
 }
-
 /* Row Split */
 .mosaic-split.-row {
   margin-left: -3px;
@@ -71,7 +63,6 @@
   /* Split size */
   cursor: ew-resize;
 }
-
 .mosaic-split.-row .mosaic-split-line {
   top: 0;
   bottom: 0;
@@ -80,7 +71,6 @@
   right: 3px;
   /* Split size / 2 */
 }
-
 /* Column Split */
 .mosaic-split.-column {
   margin-top: -3px;
@@ -89,7 +79,6 @@
   /* Split size */
   cursor: ns-resize;
 }
-
 .mosaic-split.-column .mosaic-split-line {
   top: 3px;
   /* Split size / 2 */
@@ -98,54 +87,44 @@
   left: 0;
   right: 0;
 }
-
 /* Tile */
 .mosaic-tile {
   position: absolute;
   margin: 3px;
   /* Split size / 2 */
 }
-
-.mosaic-tile>* {
+.mosaic-tile > * {
   height: 100%;
   width: 100%;
 }
-
 /* Split Percentages */
 .split-percentages {
   position: absolute;
 }
-
 .split-percentages.left {
   right: calc(100% - 10px);
   /* Replace 10px with your split-amount */
 }
-
 .split-percentages.right {
   left: calc(100% - 10px);
   /* Replace 10px with your split-amount */
 }
-
 .split-percentages.bottom {
   top: calc(100% - 10px);
   /* Replace 10px with your split-amount */
 }
-
 .split-percentages.top {
   bottom: calc(100% - 10px);
   /* Replace 10px with your split-amount */
 }
-
 /* Drop Target */
 .mosaic-drop-target {
   position: relative;
 }
-
 .mosaic-drop-target.drop-target-hover .drop-target-container {
   display: block;
 }
-
-.mosaic-drop-target.mosaic>.drop-target-container .drop-target {
+.mosaic-drop-target.mosaic > .drop-target-container .drop-target {
   position: absolute;
   right: calc(100% - 10px);
   /* Replace 10px with your split-amount */
@@ -156,7 +135,6 @@
   bottom: calc(100% - 10px);
   /* Replace 10px with your split-amount */
 }
-
 .drop-target-container {
   position: absolute;
   top: 0;
@@ -165,11 +143,9 @@
   bottom: 0;
   display: none;
 }
-
 .drop-target-container.-dragging {
   display: block;
 }
-
 .drop-target-container .drop-target {
   position: absolute;
   top: 0;
@@ -182,7 +158,6 @@
   opacity: 0;
   z-index: 5;
 }
-
 .drop-target-container .drop-target.drop-target-hover {
   opacity: 1;
   position: absolute;
@@ -195,7 +170,6 @@
   bottom: calc(100% - 50%);
   /* Replace 50% with your split-amount */
 }
-
 /* 
 /* Import mixins if you have them */
 /* @import (reference) 'mixins'; */
@@ -205,57 +179,52 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+      flex-direction: column;
   overflow: hidden;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
   /* fade(black, 20%) */
 }
-
 /* Toolbar Height */
 .mosaic-window-toolbar {
   z-index: 4;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+      justify-content: space-between;
   -ms-flex-align: center;
-  align-items: center;
+      align-items: center;
   -ms-flex-negative: 0;
-  flex-shrink: 0;
+      flex-shrink: 0;
   height: 30px;
   /* toolbar-height */
   background: white;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   /* fade(black, 20%) */
 }
-
 .mosaic-window-toolbar.draggable {
   cursor: move;
 }
-
 /* Window Title */
 .mosaic-window-title {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-  align-items: center;
+      align-items: center;
   height: 100%;
   padding-left: 15px;
   -ms-flex: 1;
-  flex: 1;
+      flex: 1;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   min-height: 18px;
 }
-
 /* Window Controls */
 .mosaic-window-controls {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
 }
-
 .mosaic-window-controls .separator {
   height: 20px;
   /* separator-height */
@@ -263,18 +232,16 @@
   margin: 5px 4px;
   /* ((toolbar-height - separator-height)/2) */
 }
-
 /* Window Body */
 .mosaic-window-body {
   position: relative;
   -ms-flex: 1;
-  flex: 1;
+      flex: 1;
   height: 0;
   background: white;
   z-index: 1;
   overflow: hidden;
 }
-
 /* Additional Actions Bar */
 .mosaic-window-additional-actions-bar {
   position: absolute;
@@ -285,23 +252,20 @@
   height: 0;
   overflow: hidden;
   background: white;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
   display: -ms-flexbox;
   display: flex;
   z-index: 3;
 }
-
 /* This line is corrected */
 .mosaic-window-additional-actions-bar .mosaic-window-button {
   /* Replace '@{ns}-button' */
   margin: 0;
 }
-
 .mosaic-window-additional-actions-bar .mosaic-window-button:after {
   display: none;
 }
-
 /* Body Overlay */
 .mosaic-window-body-overlay {
   position: absolute;
@@ -314,17 +278,14 @@
   display: none;
   z-index: 2;
 }
-
 /* Additional Controls Open */
 .mosaic-window.additional-controls-open .mosaic-window-additional-actions-bar {
-  height: 30px;
+  height: 150px;
   /* toolbar-height */
 }
-
 .mosaic-window.additional-controls-open .mosaic-window-body-overlay {
   display: block;
 }
-
 /* Preview */
 .mosaic-window .mosaic-preview {
   height: 100%;
@@ -334,61 +295,49 @@
   border: 1px solid black;
   max-height: 400px;
 }
-
 .mosaic-window .mosaic-preview .mosaic-window-body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+      flex-direction: column;
   -ms-flex-align: center;
-  align-items: center;
+      align-items: center;
   -ms-flex-pack: center;
-  justify-content: center;
+      justify-content: center;
 }
-
 .mosaic-window .mosaic-preview h4 {
   margin-bottom: 10px;
 }
-
 /* Default Controls */
 .mosaic:not(.mosaic-blueprint-theme) .mosaic-default-control.close-button:before {
   content: 'Close';
 }
-
 .mosaic:not(.mosaic-blueprint-theme) .mosaic-default-control.split-button:before {
   content: 'Split';
 }
-
 .mosaic:not(.mosaic-blueprint-theme) .mosaic-default-control.replace-button:before {
   content: 'Replace';
 }
-
 .mosaic:not(.mosaic-blueprint-theme) .mosaic-default-control.expand-button:before {
   content: 'Expand';
 }
-
 .mosaic.mosaic-blueprint-theme {
   background: #abb3bf;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-zero-state {
   background: #e5e8eb;
   border-radius: 2px;
   box-shadow: 0 0 0 1px rgba(17, 20, 24, 0.15);
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-zero-state .default-zero-state-icon {
   font-size: 120px;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-split:hover {
   background: none;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-split:hover .mosaic-split-line {
   box-shadow: 0 0 0 1px #4c90f0;
 }
-
 .mosaic.mosaic-blueprint-theme.mosaic-drop-target .drop-target-container .drop-target,
 .mosaic.mosaic-blueprint-theme .mosaic-drop-target .drop-target-container .drop-target {
   background: rgba(138, 187, 255, 0.2);
@@ -396,53 +345,44 @@
   transition: opacity 100ms;
   border-radius: 2px;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window,
 .mosaic.mosaic-blueprint-theme .mosaic-preview {
   box-shadow: 0 0 0 1px rgba(17, 20, 24, 0.15);
   border-radius: 2px;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-toolbar,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-toolbar {
   box-shadow: 0 1px 1px rgba(17, 20, 24, 0.15);
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-toolbar.draggable:hover,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-toolbar.draggable:hover {
   background: linear-gradient(to bottom, #fff, #f6f7f9);
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-toolbar.draggable:hover .mosaic-window-title,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-toolbar.draggable:hover .mosaic-window-title {
   color: #111418;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-title,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-title {
   font-weight: 600;
   color: #404854;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-controls .separator,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-controls .separator {
   border-left: 1px solid #dce0e5;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-controls .bp4-button,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-controls .bp4-button,
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-controls .bp4-button:before,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-controls .bp4-button:before {
   color: #738091;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window .default-preview-icon,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .default-preview-icon {
   font-size: 72px;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-body,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-body {
   border-top-width: 0;
@@ -450,128 +390,104 @@
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-additional-actions-bar,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-additional-actions-bar {
   transition: height 250ms;
   box-shadow: 0 1px 1px rgba(17, 20, 24, 0.15);
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-additional-actions-bar .bp4-button,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-additional-actions-bar .bp4-button,
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-additional-actions-bar .bp4-button:before,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-additional-actions-bar .bp4-button:before {
   color: #738091;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window.additional-controls-open .mosaic-window-toolbar,
 .mosaic.mosaic-blueprint-theme .mosaic-preview.additional-controls-open .mosaic-window-toolbar {
   box-shadow: 0 1px 0 0 0 0 1px rgba(17, 20, 24, 0.15);
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-preview,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-preview {
   border: 1px solid #8f99a8;
 }
-
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-preview h4,
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-preview h4 {
   color: #404854;
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark {
   background: #252a31;
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-zero-state {
   background: #383e47;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-split:hover .mosaic-split-line {
   box-shadow: 0 0 0 1px #2d72d2;
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark.mosaic-drop-target .drop-target-container .drop-target,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-drop-target .drop-target-container .drop-target {
   background: rgba(33, 93, 176, 0.2);
   border-color: #2d72d2;
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window-toolbar,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window-additional-actions-bar {
   background: #383e47;
   box-shadow: 0 1px 1px rgba(17, 20, 24, 0.4);
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-preview {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window .mosaic-window-toolbar.draggable:hover,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-preview .mosaic-window-toolbar.draggable:hover {
   background: linear-gradient(to bottom, #404854, #383e47);
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window .mosaic-window-toolbar.draggable:hover .mosaic-window-title,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-preview .mosaic-window-toolbar.draggable:hover .mosaic-window-title {
   color: #fff;
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window .mosaic-window-title,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-preview .mosaic-window-title {
   color: #dce0e5;
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window .mosaic-window-controls .separator,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-preview .mosaic-window-controls .separator {
   border-color: #5f6b7c;
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window .mosaic-window-controls .bp4-button,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-preview .mosaic-window-controls .bp4-button,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window .mosaic-window-controls .bp4-button:before,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-preview .mosaic-window-controls .bp4-button:before {
   color: #abb3bf;
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window .mosaic-window-body,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-preview .mosaic-window-body {
   background: #252a31;
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window .mosaic-window-additional-actions-bar .bp4-button,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-preview .mosaic-window-additional-actions-bar .bp4-button,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window .mosaic-window-additional-actions-bar .bp4-button:before,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-preview .mosaic-window-additional-actions-bar .bp4-button:before {
   color: #c5cbd3;
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window.additional-controls-open .mosaic-window-toolbar,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-preview.additional-controls-open .mosaic-window-toolbar {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window .mosaic-preview,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-preview .mosaic-preview {
   border-color: #5f6b7c;
 }
-
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-window .mosaic-preview h4,
 .mosaic.mosaic-blueprint-theme.bp4-dark .mosaic-preview .mosaic-preview h4 {
   color: #edeff2;
 }
-
 #carbonads * {
   margin: initial;
   padding: initial;
 }
-
 #carbonads {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 #carbonads {
   display: -ms-flexbox;
   display: flex;
@@ -580,37 +496,30 @@
   box-shadow: 0 1px 4px 1px hsla(0, 0%, 0%, 0.1);
   z-index: 100;
 }
-
 #carbonads a {
   color: inherit;
   text-decoration: none;
 }
-
 #carbonads a:hover {
   color: inherit;
 }
-
 #carbonads span {
   position: relative;
   display: block;
   overflow: hidden;
 }
-
 #carbonads .carbon-wrap {
   display: -ms-flexbox;
   display: flex;
 }
-
 #carbonads .carbon-img {
   display: block;
   margin: 0;
   line-height: 1;
 }
-
 #carbonads .carbon-img img {
   display: block;
 }
-
 #carbonads .carbon-text {
   font-size: 13px;
   padding: 10px;
@@ -618,7 +527,6 @@
   line-height: 1.5;
   text-align: left;
 }
-
 #carbonads .carbon-poweredby {
   display: block;
   padding: 6px 8px;
@@ -634,7 +542,6 @@
   bottom: 0;
   right: 0;
 }
-
 html,
 body,
 #app,
@@ -644,82 +551,69 @@ body,
   width: 100%;
   overflow: hidden;
 }
-
 .react-mosaic-example-app .actions-label {
   margin-right: 10px;
 }
-
 .react-mosaic-example-app .theme-selection {
   margin: 0;
 }
-
 .react-mosaic-example-app .navbar-separator {
   height: 20px;
   border-left: 1px solid #5f6b7c;
   margin: 10px;
 }
-
 .react-mosaic-example-app .bp4-navbar {
   overflow: hidden;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-  align-items: center;
+      align-items: center;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+      justify-content: space-between;
 }
-
 .react-mosaic-example-app .bp4-navbar-heading a {
   color: #fff;
 }
-
 .react-mosaic-example-app .bp4-navbar-heading a .version {
   color: #738091;
 }
-
-.react-mosaic-example-app>.mosaic {
+.react-mosaic-example-app > .mosaic {
   height: calc(100% - 50px);
 }
-
 .react-mosaic-example-app .github-link {
-  height: 24px;
-  width: 24px;
+  height: 32px;
+  width: 32px;
   margin-left: 15px;
 }
-
 .react-mosaic-example-app .toolbar-example {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
-  justify-content: center;
+      justify-content: center;
   -ms-flex-align: center;
-  align-items: center;
+      align-items: center;
   width: 100%;
   height: 100%;
 }
-
 body {
   -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+   -ms-user-select: none;
+       user-select: none;
   -webkit-user-select: none;
 }
-
 .example-window {
   height: 100%;
   padding: 20px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-  align-items: center;
+      align-items: center;
   -ms-flex-direction: column;
-  flex-direction: column;
+      flex-direction: column;
 }
-
 .example-window .ad-container {
   display: none;
 }
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

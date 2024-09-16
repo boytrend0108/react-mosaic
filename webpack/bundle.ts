@@ -11,7 +11,6 @@ const bundleConfig: webpack.Configuration = {
   plugins: [
     ...(config.plugins || []),
     new webpack.DefinePlugin({
-      // This is a macro substitution; it has to end up in the source with quotes.
       'process.env.NODE_ENV': '"production"',
     }),
     new webpack.LoaderOptionsPlugin({

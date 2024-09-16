@@ -1,4 +1,5 @@
 node_modules/
+secret/
 /react-mosaic-component.css*
 .*.swp
 react-mosaic.tar.bz2
