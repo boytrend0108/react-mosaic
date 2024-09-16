@@ -27,7 +27,7 @@ Fetch and display data from a fake API.
 2 Start the development server and client:
 
 ```bash
-docker run -p 3001:3001 -p5000:5000 boytrend/mosaic:2.2
+docker run -d -p 3001:3001 -p5000:5000 boytrend/mosaic:2.2
 ```
 
 4 Open `http://localhost:3001` in your browser, server will run on `http://localhost:5000`;
