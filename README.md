@@ -24,12 +24,13 @@ Fetch and display data from a fake API.
 1.Clone the repository:
 
 ```bash
- https://github.com/boytrend0108/react-mosaic
+ git clone https://github.com/boytrend0108/react-mosaic
 ```
 
 2.Install the required dependencies for client and server:
 
 ```bash
+  cd react-mosaic/
   npm install
 ```
 
