@@ -18,23 +18,23 @@ export const CloseAdditionalControlsButton: React.FC<Props> = (props) => {
   const dispatch = useAppDispatch();
   const { companiesList } = useAppSelector((state) => state.appReducer);
 
-  function handleOnClick(id: ICompanyValue, name: ICompanyValue) {
+  function handleOnClick(id: ICompanyValue, name: ICompanyValue, ticker: ICompanyValue) {
     context.mosaicWindowActions.setAdditionalControlsOpen(false);
-    dispatch(appAction.setSelectedWindow({ count, id, name }));
+    dispatch(appAction.setSelectedWindow({ count, id, name, ticker }));
   }
 
   return (
     <div className={classNames(Classes.BUTTON_GROUP, Classes.MINIMAL, 'w-full h-25')}>
       <ul className="companies-list overflow-auto h-full w-full">
-        {companiesList.map(({ id, name }) => {
+        {companiesList.map(({ id, name, ticker }) => {
           if (name === companyName) {
             return;
           }
 
           return (
             <li key={id}>
-              <button onClick={() => handleOnClick(id, name)} className={Classes.BUTTON}>
-                {name}
+              <button onClick={() => handleOnClick(id, name, ticker)} className={Classes.BUTTON}>
+                {ticker}
               </button>
             </li>
           );

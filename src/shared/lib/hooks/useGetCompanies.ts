@@ -10,9 +10,9 @@ export function useCompaniesData() {
   useEffect(() => {
     if (data) {
       for (let i = 0; i < data.length; i++) {
-        const { id, name } = data[i];
-        dispatch(companyAction.setSelectedWindow({ count: i + 1, id, name }));
-        dispatch(companyAction.setCompaniesList({ id, name }));
+        const { id, name, ticker } = data[i];
+        dispatch(companyAction.setSelectedWindow({ count: i + 1, id, name, ticker }));
+        dispatch(companyAction.setCompaniesList({ id, name, ticker }));
       }
     }
   }, [data]);

@@ -3,8 +3,9 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { ICompanyValue } from '../../entities/Company/lib/types/companyTypes'
 
 interface CompanyListItem {
-  id: ICompanyValue
+  id: ICompanyValue;
   name: ICompanyValue;
+  ticker: ICompanyValue;
 }
 
 export interface SelectedWindow extends CompanyListItem {
