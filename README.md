@@ -1,9 +1,10 @@
-# Data Loader - dashboard with 3 Company Information Widgets.that fetch and display data from a fake API.
+# Data Loader - dashboard with 3 Company Information Widgets.
+Fetch and display data from a fake API.
 
 - By default, there are 3 windows displaying information from the first 3 companies in a list.
 - Users can add, delete, split, and drag and drop windows.
 - Users can select which company will be displayed in the selected window.
-- o store data, we use a fake API: db.json and json-server.
+- To store data, we use a fake API: db.json and json-server.
 - There are 3 themes available (Blueprint, Blueprint Dark, None).
 - It uses RTK Query to fetch, store, and cache data.
 - There is a Dockerfile to run the app in different environments.
