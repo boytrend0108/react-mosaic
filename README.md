@@ -18,42 +18,16 @@ Fetch and display data from a fake API.
 <img src="https://github.com/boytrend0108/react-mosaic/blob/master/public/images/sinergy.gif" alt="App Screenshot" width="500" height="300">
 
 ### Getting Started
-
-## Variant A via NPM:
-
-1.Clone the repository:
+1 Download docker image:
 
 ```bash
- git clone https://github.com/boytrend0108/react-mosaic
-```
-
-2.Install the required dependencies for client and server:
-
-```bash
-  cd react-mosaic/
-  npm install
-```
-
-3.Start the development server and client:
-
-```bash
-  npm run start
-```
-
-4.Open `http://localhost:3001` in your browser, server will run on `http://localhost:5000`;
-
-## Variant B via Docker:
-
-1 Dowload docker image:
-
-```bash
- docker pull boytrend/mosaic
+ docker pull boytrend/mosaic:2.2
 ```
 
 2 Start the development server and client:
 
 ```bash
-docker run -p 3001:3001 -p5000:5000 boytrend/mosaic
+docker run -p 3001:3001 -p5000:5000 boytrend/mosaic:2.2
 ```
 
 4 Open `http://localhost:3001` in your browser, server will run on `http://localhost:5000`;
