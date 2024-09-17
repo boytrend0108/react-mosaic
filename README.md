@@ -14,10 +14,12 @@ Fetch and display data from a fake API.
 
 - Front-end: React, Redux, RTK Query, Typescript, Tailwind, Blueprint, Webpack
 - Back-end: json-server, docker
+- Testing: Cypress
 
 <img src="https://github.com/boytrend0108/react-mosaic/blob/master/public/images/sinergy.gif" alt="App Screenshot" width="500" height="300">
 
 ### Getting Started
+
 1 Download docker image:
 
 ```bash
