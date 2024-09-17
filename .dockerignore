@@ -1,0 +1,47 @@
+# Cypress
+cypress/videos
+cypress/screenshots
+cypress/results
+
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Build output
+build
+dist
+
+# Version control
+.git
+.gitignore
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Temporary files
+tmp
+temp
+
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# Testing
+coverage
+
+# Miscellaneous
+*.md
+LICENSE

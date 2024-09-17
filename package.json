@@ -9,6 +9,7 @@
     "*.css"
   ],
   "scripts": {
+    "cy:open": "cypress open",
     "predeploy": "npm run bundle",
     "deploy": "gh-pages -d dist",
     "dev": "webpack-dev-server --config webpack/hot.ts --port 3001",
@@ -64,6 +65,7 @@
     "concurrently": "^9.0.1",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^6.11.0",
+    "cypress": "^13.14.2",
     "dnd-core": "16.0.1",
     "file-loader": "^6.2.0",
     "gh-pages": "^6.1.1",
